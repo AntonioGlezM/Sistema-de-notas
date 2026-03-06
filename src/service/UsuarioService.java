@@ -85,7 +85,8 @@ public class UsuarioService {
 
                 String[] datos = linea.split(";");
 
-                if (datos.length < 2) continue;
+                if (datos.length < 2)
+                    continue;
 
                 String emailGuardado = datos[0];
                 String passwordGuardado = datos[1];
@@ -125,6 +126,7 @@ public class UsuarioService {
             System.out.println("2. Listar notas");
             System.out.println("3. Ver nota");
             System.out.println("4. Eliminar nota");
+            System.out.println("5. Buscar nota");
             System.out.println("0. Cerrar sesión");
             System.out.print("Seleccione opción: ");
 
@@ -150,6 +152,10 @@ public class UsuarioService {
 
                 case 4:
                     notaService.eliminarNota(email);
+                    break;
+
+                case 5:
+                    notaService.buscarNota(email);
                     break;
 
                 case 0:
